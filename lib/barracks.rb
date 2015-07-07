@@ -1,13 +1,16 @@
 require_relative 'footman'
 require_relative 'peasant'
+require_relative 'building'
 
-class Barracks
+class Barracks < Building
 
-  attr_reader :gold, :food
+  attr_accessor :gold, :food, :health_points, :lumber
 
   def initialize
+    @health_points = 500
     @gold = 1000
     @food = 80
+    @lumber = 500
     @footman_gold_cost = 135
     @footman_food_cost = 2
     @peasant_gold_cost = 90
